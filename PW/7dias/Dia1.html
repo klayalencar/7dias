@@ -1,0 +1,78 @@
+
+Aqui está o código HTML com CSS adicionado:
+
+html
+Copy code
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Comparação de Variáveis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        #result1, #result2, #result3 {
+            margin-bottom: 10px;
+        }
+    </style>
+    <script>
+        // JavaScript code here...
+    </script>
+</head>
+<body>
+    <h1>Comparação de Variáveis</h1>
+    <button onclick="compareVariables()">Comparar</button>
+    <div id="result1"></div>
+    <div id="result2"></div>
+    <div id="result3"></div>
+
+    <script>
+        function compareVariables() {
+            let numeroUm = 1;
+            let stringUm = '1';
+            let numeroTrinta = 30;
+            let stringTrinta = '30';
+            let numeroDez = 10;
+            let stringDez = '10';
+
+            let result1 = document.getElementById("result1");
+            let result2 = document.getElementById("result2");
+            let result3 = document.getElementById("result3");
+
+            if (numeroUm == stringUm) {
+                result1.innerHTML = "As variáveis numeroUm e stringUm têm o mesmo valor, mas tipos diferentes";
+            } else {
+                result1.innerHTML = "As variáveis numeroUm e stringUm não têm o mesmo valor";
+            }
+
+            if (numeroTrinta === stringTrinta) {
+                result2.innerHTML = "As variáveis numeroTrinta e stringTrinta têm o mesmo valor e mesmo tipo";
+            } else {
+                result2.innerHTML = "As variáveis numeroTrinta e stringTrinta não têm o mesmo tipo";
+            }
+
+            if (numeroDez == stringDez) {
+                result3.innerHTML = "As variáveis numeroDez e stringDez têm o mesmo valor, mas tipos diferentes";
+            } else {
+                result3.innerHTML = "As variáveis numeroDez e stringDez não têm o mesmo valor";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        
+        h1 {
+            text-align: center;
+        }
+        
+        .calculator {
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f4f4f4;
+        }
+        
+        .calculator label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .calculator input[type="text"] {
+            width: 100%;
+            padding: 5px;
+        }
+        
+        .calculator input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #4caf50;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        
+        .calculator input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        .result p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculadora</h1>
+    <div class="calculator">
+        <label for="operation">Operação:</label>
+        <input type="text" id="operation" placeholder="Digite a operação (+, -, *, /) ou 'sair'">
+        
+        <label for="num1">Primeiro número:</label>
+        <input type="text" id="num1" placeholder="Digite o primeiro número">
+        
+        <label for="num2">Segundo número:</label>
+        <input type="text" id="num2" placeholder="Digite o segundo número">
+        
+        <input type="submit" value="Calcular" onclick="calculate()">
+        
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function calculate() {
+            let operation = document.getElementById("operation").value;
+            let num1 = parseInt(document.getElementById("num1").value);
+            let num2 = parseInt(document.getElementById("num2").value);
+            let resultElement = document.getElementById("result");
+
+            switch (operation) {
+                case "+":
+                    resultElement.innerHTML = `<p>O resultado é: ${num1 + num2}</p>`;
+                    break;
+                case "-":
+                    resultElement.innerHTML = `<p>O resultado é: ${num1 - num2}</p>`;
+                    break;
+                case "/":
+                    resultElement.innerHTML = `<p>O resultado é: ${num1 / num2}</p>`;
+                    break;
+                case "*":
+                    resultElement.innerHTML = `<p>O resultado é: ${num1 * num2}</p>`;
+                    break;
+                case "sair":
+                    resultElement.innerHTML = "<p>Até a próxima!</p>";
+                    break;
+                default:
+                    resultElement.innerHTML = "<p>Entrada inválida!</p>";
+            }
+        }
+    </script>
+</body>
+</html>

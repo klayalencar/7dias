@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Compras</title>
+    <script>
+        function adicionarComida() {
+            let listaDeHortifruti = [];
+            let listaDeFrios = [];
+            let listaDeDoces = [];
+            let listaDeCarnes = [];
+            let listaDeBebidas = [];
+            let perguntaOutraComida = "Sim";
+            let categoria;
+
+            const perguntaAdicionar = prompt("Você deseja adicionar alguma comida à sua lista de compras? Responda 'Sim' ou 'Não'");
+
+            if (perguntaAdicionar === "Não" || perguntaAdicionar === "não") {
+                alert("Certo, muito obrigado!");
+                return;
+            } else if (perguntaAdicionar === "Sim" || perguntaAdicionar === "sim") {
+                while (perguntaOutraComida === "Sim" || perguntaOutraComida === "sim") {
+
+                    comida = prompt("Qual comida você deseja adicionar?");
+                    if (comida === null || comida === "") {
+                        alert("Inválido!");
+                        return;
+                    }
+                    categoria = prompt("Em qual categoria ela se encaixa? (Horti-fruti, frios, doces, carnes, ou bebidas");
+                    if (categoria === null || categoria === "") {
+                        alert("Inválido!");
+                        return;
+                    }
+
+                    if (categoria === "Horti-fruti" || categoria === "horti-fruti") {
+                        listaDeHortifruti.push(comida);
+                    } else if (categoria === "Frios" || categoria === "frios") {
+                        listaDeFrios.push(comida);
+                    } else if (categoria === "Doces" || categoria === "doces") {
+                        listaDeDoces.push(comida);
+                    } else if (categoria === "Carnes" || categoria === "carnes") {
+                        listaDeCarnes.push(comida);
+                    } else if (categoria === "Bebidas" || categoria === "bebidas") {
+                        listaDeBebidas.push(comida);
+                    } else {
+                        alert("Resposta inválida!");
+                        return;
+                    }
+
+                    perguntaOutraComida = prompt("Gostaria de adicionar mais uma comida? Responda 'Sim' ou 'Não'");
+                    if (perguntaOutraComida === "Não" || perguntaOutraComida === "não") {
+                        alert("Muito bem! Sua lista de compras ficou assim:" + "\n" + "\n" + `Horti-fruti: ${listaDeHortifruti.join(", ")}` + "\n" + `Frios: ${listaDeFrios.join(", ")}` + "\n" + `Doces: ${listaDeDoces.join(", ")}` + "\n" + `Carnes: ${listaDeCarnes.join(", ")}` + "\n" + `Bebidas: ${listaDeBebidas.join(", ")}`);
+                    } else if (perguntaOutraComida === null || perguntaOutraComida === "") {
+                        alert("Inválido!");
+                        return;
+                    }
+                }
+            } else {
+                alert("Resposta inválida!");
+                return;
+            }
+        }
+    </script>
+    <style>
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="adicionarComida()">Adicionar Comida</button>
+</body>
+</html>
